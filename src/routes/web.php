@@ -3,15 +3,17 @@
 // Public Pages
 Route::get('/','HomeController@index')->name('home');
 Route::get('/about','HomeController@about')->name('about');
-Route::get('/blog','HomeController@blogs')->name('blogs');
-Route::get('/blog/{id}','HomeController@blog')->name('blog');
+Route::get('/news','HomeController@blogs')->name('blogs');
+Route::get('/courses','HomeController@courses')->name('courses');
+Route::get('/courses/{id}','HomeController@course')->name('course');
+Route::get('/news/{id}','HomeController@blog')->name('blog');
 Route::get('/contact','HomeController@contact')->name('contact');
-Route::get('/practice','HomeController@practice')->name('practice');
-Route::get('/cases','HomeController@cases')->name('cases');
+
 Route::get('/payment','HomeController@payment')->name('payment');
 Route::get('/paymentreport','PaymentController@handleGatewayCallback')->name('paymentreport');
-Route::get('/cases/{id}','HomeController@unitcase')->name('unitcase');
-// Route::get('/account','HomeController@account')->name('account');
+
+
+
 
 
 Route::post('/SendMessage','HomeController@SaveContact')->name('SendMessage');
@@ -38,8 +40,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/users/{id}/status', 'UsersController@status');
     Route::get('/users/{id}/resetpassword', 'UsersController@ResetPassword');
     Route::get('/usertypes/{id}/status', 'UserTypeController@status');
+
     Route::get('/categories/{id}/status', 'CategoryController@status');
     Route::get('/departments/{id}/status', 'DepartmentController@status');
+
     Route::get('/archives/{id}/status', 'ArchiveController@status');
     Route::get('/cases/{id}/status', 'CasesController@status');
     Route::get('/clients/{id}/status', 'ClientController@status');

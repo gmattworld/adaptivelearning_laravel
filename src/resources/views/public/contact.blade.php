@@ -1,76 +1,127 @@
 @extends('layouts.client')
 
 @section('content')
+    <!-- Home -->
 
-
-<section class="ftco-cover overlay" style="background-image: url({{ URL::asset('client/images/bg_2.jpg') }});" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row align-items-center justify-content-center ftco-vh-100">
-        <div class="col-md-9 text-center">
-          <h1 class="ftco-heading mb-4" data-aos="fade-up" data-aos-delay="500">Contact Us</h1>
-          <h2 class="h5 ftco-subheading mb-5" data-aos="fade-up"  data-aos-delay="600"></h2>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END section -->
-
-  <div class="ftco-section contact-section">
-    <div class="container bg-light">
-      <div class="row d-flex mb-5 contact-info">
-        <div class="col-md-12 mb-4">
-          <h2 class="h4">Contact Information</h2>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-md-3">
-          <p><span>Address:</span> Lagos State Judiciary, Oba Akinjobi Way, Ikeja, Lagos</p>
-        </div>
-        <div class="col-md-3">
-          <p><span>Phone:</span> <a href="tel://2348182052046">+2348182052046, +2348182052197</a></p>
-        </div>
-        <div class="col-md-3">
-          <p><span>Email:</span> <a href="mailto:support@lagosjudiciary.gov.ng">support@lagosjudiciary.gov.ng</a></p>
-        </div>
-        <div class="col-md-3">
-          <p><span>Website</span> <a href="#">lagosjudiciary.gov.ng</a></p>
-        </div>
-      </div>
-      <div class="row block-9">
-        <div class="col-md-6 pr-md-5">
-            <!-- BEGIN FORM-->
-            {!! Form::open(['action' => 'HomeController@SaveContact', 'method'=>'POST', 'id'=>'form_validation']) !!}
-                <div class="form-body">
-                    @include('inc.message')
-                    @csrf()
-                    <div class="form-group">
-                        {!! Form::text('name', '', ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Your Name']) !!}
-                        <span class="text-danger"> {!! $errors->first('name'); !!} </span>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::text('email', '', ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Your Email']) !!}
-                        <span class="text-danger"> {!! $errors->first('email'); !!} </span>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::text('subject', '', ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Subject']) !!}
-                        <span class="text-danger"> {!! $errors->first('subject'); !!} </span>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::textarea('message', '', ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Message']) !!}
-                        <span class="text-danger"> {!! $errors->first('message'); !!} </span>
-                    </div>
-
-                    <div class="form-group">
-                        {!! Form::submit('Send Message', ['class'=>'btn btn-primary py-3 px-5']) !!}
+    <div class="home">
+        <!-- Background image artist https://unsplash.com/thepootphotographer -->
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll" data-image-src="../client/images/contact.jpg" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <div class="home_title">Contact</div>
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Contact</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            {!! Form::close() !!}
-            <!-- END FORM-->
+            </div>
         </div>
-        <div class="col-md-6" id="map"></div>
-      </div>
     </div>
-  </div>
 
+    <!-- Contact -->
 
+    <div class="contact">
+        <div class="container-fluid">
+            <div class="row row-xl-eq-height">
+                <!-- Contact Content -->
+                <div class="col-xl-6">
+                    <div class="contact_content">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="contact_about">
+                                    <div class="logo_container">
+                                        <a href="#">
+                                            <div class="logo_content d-flex flex-row align-items-end justify-content-start">
+                                                <div class="logo_img"><img src="{{ URL::asset('client/images/logo.png') }}" alt=""></div>
+                                                <div class="logo_text">learn</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="contact_about_text">
+                                        <p>Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="contact_info_container">
+                                    <div class="contact_info_main_title">Contact Us</div>
+                                    <div class="contact_info">
+                                        <div class="contact_info_item">
+                                            <div class="contact_info_title">Address:</div>
+                                            <div class="contact_info_line">1481 Creekside Lane Avila Beach, CA 93424</div>
+                                        </div>
+                                        <div class="contact_info_item">
+                                            <div class="contact_info_title">Phone:</div>
+                                            <div class="contact_info_line">+53 345 7953 32453</div>
+                                        </div>
+                                        <div class="contact_info_item">
+                                            <div class="contact_info_title">Email:</div>
+                                            <div class="contact_info_line">yourmailgmail.com</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact_form_container">
+                            <form action="#" id="contact_form" class="contact_form">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-lg-6 contact_name_col">
+                                            <input type="text" class="contact_input" placeholder="Name" required="required">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="email" class="contact_input" placeholder="E-mail" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><input type="text" class="contact_input" placeholder="Subject" required="required"></div>
+                                <div><textarea class="contact_input contact_textarea" placeholder="Message"></textarea></div>
+                                <button class="contact_button"><span>send message</span><span class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Map -->
+                <div class="col-xl-6 map_col">
+                    <div class="contact_map">
+
+                        <!-- Google Map -->
+                        <div id="google_map" class="google_map">
+                            <div class="map_container">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('client/styles/bootstrap4/bootstrap.min.css') }}">
+    <link href="{{ URL::asset('client/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('client/plugins/video-js/video-js.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('client/styles/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('client/styles/contact_responsive.css') }}">
+@endsection
+
+@section('scripts')
+    <script src="{{ URL::asset('client/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ URL::asset('client/styles/bootstrap4/popper.js') }}"></script>
+    <script src="{{ URL::asset('client/styles/bootstrap4/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('client/plugins/easing/easing.js') }}"></script>
+    <script src="{{ URL::asset('client/plugins/parallax-js-master/parallax.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="{{ URL::asset('client/js/contact.js') }}"></script>
 @endsection

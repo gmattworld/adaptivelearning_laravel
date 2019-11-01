@@ -27,8 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = $this->Post->LatestPost(3);
-        return view("public.index")->with(['active'=>'users', 'subactive'=>'user', 'posts'=>$posts]);
+        // $posts = $this->Post->LatestPost(3);
+        // return view("public.index")->with(['posts'=>$posts]);
+        return view("public.index");
     }
 
     /**
@@ -39,7 +40,7 @@ class HomeController extends Controller
     public function blogs()
     {
         $posts = $this->Post->GetAllPaginated(12);
-        return view("public.blogs")->with(['active'=>'users', 'subactive'=>'user', 'posts'=>$posts]);
+        return view("public.news")->with(['active'=>'users', 'subactive'=>'user', 'posts'=>$posts]);
     }
 
 
@@ -53,9 +54,9 @@ class HomeController extends Controller
     {
         $model = $this->Post->GetByID($id);
         if ($model == null) {
-            return redirect('/blogs')->with(['error' => 'Blog not found!']);
+            return redirect('/news')->with(['error' => 'Blog not found!']);
         }
-        return view("public.blog")->with(['active'=>'users', 'post'=>$model]);
+        return view("public.news")->with(['active'=>'users', 'post'=>$model]);
     }
 
     /**
@@ -111,11 +112,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function cases()
+    public function courses()
     {
         $cases = $this->Cases->GetAllPaginated(12);
-        return view("public.cases")->with(['active'=>'users', 'subactive'=>'user', 'cases'=>$cases]);
+        return view("public.courses")->with(['active'=>'users', 'subactive'=>'user', 'cases'=>$cases]);
     }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function course()
+    {
+        $cases = $this->Cases->GetAllPaginated(12);
+        return view("public.course")->with(['active'=>'users', 'subactive'=>'user', 'cases'=>$cases]);
+    }
+
 
     /**
      * Display a listing of the resource.
