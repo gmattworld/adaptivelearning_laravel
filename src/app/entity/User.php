@@ -40,31 +40,31 @@ class User extends Authenticatable
 
     public function user_type()
     {
-        return $this->belongsTo('App\UserType');
+        return $this->belongsTo('App\entity\UserType');
     }
 
     public function post()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\entity\Post');
     }
 
     public function case()
     {
-        return $this->hasMany('App\Cases', 'user_id', 'id');
+        return $this->hasMany('App\entity\Cases', 'user_id', 'id');
     }
 
     public function archive()
     {
-        return $this->hasMany('App\Archive');
+        return $this->hasMany('App\entity\Archive');
     }
 
     public function lawyer()
     {
-        return $this->hasOne('App\Lawyer');
+        return $this->hasOne('App\entity\Lawyer');
     }
 
     public function client()
     {
-        return $this->hasOne('App\Client');
+        return $this->hasOne('App\entity\Client');
     }
 }

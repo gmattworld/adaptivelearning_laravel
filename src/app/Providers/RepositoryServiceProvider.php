@@ -36,32 +36,38 @@ class RepositoryServiceProvider extends ServiceProvider
 
 
         $this->app->bind(
+            'App\Repositories\Interfaces\ISchoolRepository',
+            'App\Repositories\SchoolRepository'
+        );
+
+
+        $this->app->bind(
             'App\Repositories\Interfaces\IDepartmentRepository',
             'App\Repositories\DepartmentRepository'
         );
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\ICategoryRepository',
-            'App\Repositories\CategoryRepository'
+            'App\Repositories\Interfaces\ILevelRepository',
+            'App\Repositories\LevelRepository'
         );
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\IQualificationRepository',
-            'App\Repositories\QualificationRepository'
+            'App\Repositories\Interfaces\IResourceRepository',
+            'App\Repositories\ResourceRepository'
         );
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\ICourtRepository',
-            'App\Repositories\CourtRepository'
+            'App\Repositories\Interfaces\ISubjectRepository',
+            'App\Repositories\SubjectRepository'
         );
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\ICourtRoomRepository',
-            'App\Repositories\CourtRoomRepository'
+            'App\Repositories\Interfaces\ICourseRepository',
+            'App\Repositories\CourseRepository'
         );
 
 
@@ -72,9 +78,13 @@ class RepositoryServiceProvider extends ServiceProvider
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\ILawyerRepository',
-            'App\Repositories\LawyerRepository'
+            'App\Repositories\Interfaces\IContactRepository',
+            'App\Repositories\ContactRepository'
         );
+
+
+
+
 
 
         $this->app->bind(
@@ -84,26 +94,8 @@ class RepositoryServiceProvider extends ServiceProvider
 
 
         $this->app->bind(
-            'App\Repositories\Interfaces\ICasesRepository',
-            'App\Repositories\CasesRepository'
-        );
-
-
-        $this->app->bind(
-            'App\Repositories\Interfaces\IContactRepository',
-            'App\Repositories\ContactRepository'
-        );
-
-
-        $this->app->bind(
-            'App\Repositories\Interfaces\IArchiveRepository',
-            'App\Repositories\ArchiveRepository'
-        );
-
-
-        $this->app->bind(
-            'App\Repositories\Interfaces\IEfilingRepository',
-            'App\Repositories\EfilingRepository'
+            'App\Repositories\Interfaces\ICategoryRepository',
+            'App\Repositories\CategoryRepository'
         );
     }
 

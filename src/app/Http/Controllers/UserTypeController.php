@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\UserType;
+use App\entity\UserType;
 use App\Repositories\Interfaces\IUserTypeRepository;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserTypes\UserTypeCreateRequest;

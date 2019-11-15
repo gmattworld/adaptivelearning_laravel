@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Interfaces\IUserTypeRepository;
-use App\UserType;
+use App\entity\UserType;
 
 class UserTypeRepository extends BaseRepository implements IUserTypeRepository
 {

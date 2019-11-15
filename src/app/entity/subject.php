@@ -15,7 +15,7 @@ class subject extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'code', 'is_active'
+        'name', 'description', 'code', 'course_id', 'is_active'
     ];
 
     /**
@@ -36,11 +36,11 @@ class subject extends Model
 
     public function post()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\entity\Post');
     }
 
-    public function cases()
+    public function course()
     {
-        return $this->hasMany('App\Cases');
+        return $this->belongsTo('App\entity\course');
     }
 }

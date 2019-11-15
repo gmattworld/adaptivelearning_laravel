@@ -22,17 +22,17 @@
                                     <ul class="top_bar_contact_list">
                                         <li><div class="question">Have any questions?</div></li>
                                         <li>
-                                            <div>(009) 35475 6688933 32</div>
+                                            <div>(+234) 812 345 6789</div>
                                         </li>
                                         <li>
-                                            <div>info@elaerntemplate.com</div>
+                                            <div>alearn@gmail.com</div>
                                         </li>
                                     </ul>
                                     <div class="top_bar_login ml-auto">
-                                        <!-- <ul>
-                                            <li><a href="#">Register</a></li>
-                                            <li><a href="#">Login</a></li>
-                                        </ul> -->
+                                        <ul>
+                                            <li><a href="<?php echo e(URL('/register')); ?>">Register</a></li>
+                                            <li><a href="<?php echo e(URL('/login')); ?>">Login</a></li>
+                                        </ul>
                                         
                                     </div>
                                 </div>
@@ -49,20 +49,20 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container">
-                                    <a href="#">
+                                    <a href="<?php echo e(URL('/')); ?>">
                                         <div class="logo_content d-flex flex-row align-items-end justify-content-start">
                                             <div class="logo_img"><img src="~/client/images/logo.png" alt=""></div>
-                                            <div class="logo_text">learn</div>
+                                            <div class="logo_text">alearn</div>
                                         </div>
                                     </a>
                                 </div>
                                 <nav class="main_nav_contaner ml-auto">
                                     <ul class="main_nav">
-                                        <li><a href="<?php echo e(URL('/')); ?>">home</a></li>
-                                        <li><a href="<?php echo e(URL('/about')); ?>">about us</a></li>
-                                        <li><a href="<?php echo e(URL('/courses')); ?>">courses</a></li>
-                                        <li><a href="<?php echo e(URL('/news')); ?>">news</a></li>
-                                        <li><a href="<?php echo e(URL('/contact')); ?>">contact</a></li>
+                                        <li><a href="<?php echo e(URL('/')); ?>">Home</a></li>
+                                        <li><a href="<?php echo e(URL('/about')); ?>">About us</a></li>
+                                        <li><a href="<?php echo e(URL('/courses')); ?>">Courses</a></li>
+                                        <li><a href="<?php echo e(URL('/news')); ?>">News</a></li>
+                                        <li><a href="<?php echo e(URL('/contact')); ?>">Contact</a></li>
                                     </ul>
                                     <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
@@ -111,16 +111,15 @@
             </div>
             <nav class="menu_nav">
                 <ul class="menu_mm">
-                    <li class="menu_mm"><a href="index.html">Home</a></li>
-                    <li class="menu_mm"><a href="courses.html">Courses</a></li>
-                    <li class="menu_mm"><a href="instructors.html">Instructors</a></li>
-                    <li class="menu_mm"><a href="#">Events</a></li>
-                    <li class="menu_mm"><a href="blog.html">Blog</a></li>
-                    <li class="menu_mm"><a href="contact.html">Contact</a></li>
+                    <li class="menu_mm"><a href="<?php echo e(URL('/')); ?>">Home</a></li>
+                    <li class="menu_mm"><a href="<?php echo e(URL('/about')); ?>">About us</a></li>
+                    <li class="menu_mm"><a href="<?php echo e(URL('/courses')); ?>">Courses</a></li>
+                    <li class="menu_mm"><a href="<?php echo e(URL('/news')); ?>">News</a></li>
+                    <li class="menu_mm"><a href="<?php echo e(URL('/contact')); ?>">Contact</a></li>
                 </ul>
             </nav>
             <div class="menu_extra">
-                <div class="menu_phone"><span class="menu_title">phone:</span>(009) 35475 6688933 32</div>
+                <div class="menu_phone"><span class="menu_title">phone:</span>(+234) 812 345 6789</div>
                 <div class="menu_social">
                     <span class="menu_title">follow us</span>
                     <ul>
@@ -147,7 +146,7 @@
                     <div class="col-lg-3 footer_col">
                         <div class="footer_about">
                             <div class="logo_container">
-                                <a href="#">
+                                <a href="<?php echo e(URL('/courses')); ?>">
                                     <div class="logo_content d-flex flex-row align-items-end justify-content-start">
                                         <div class="logo_img"><img src="images/logo.png" alt=""></div>
                                         <div class="logo_text">learn</div>
@@ -155,7 +154,10 @@
                                 </a>
                             </div>
                             <div class="footer_about_text">
-                                <p>Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
+                                <p>
+                                    E-Learning or technology in learning has become a buzz in the education industry and
+                                    today it caters for the needs of modern-day learners.
+                                </p>
                             </div>
                             <div class="footer_social">
                                 <ul>
@@ -178,12 +180,11 @@
                         <div class="footer_links">
                             <div class="footer_title">Quick menu</div>
                             <ul class="footer_list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="#">Facts</a></li>
+                                <li><a href="<?php echo e(URL('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(URL('/about')); ?>">About us</a></li>
+                                <li><a href="<?php echo e(URL('/courses')); ?>">Courses</a></li>
+                                <li><a href="<?php echo e(URL('/news')); ?>">News</a></li>
+                                <li><a href="<?php echo e(URL('/contact')); ?>">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -192,12 +193,11 @@
                         <div class="footer_links">
                             <div class="footer_title">Useful Links</div>
                             <ul class="footer_list">
-                                <li><a href="courses.html">Courses</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="#">Teachers</a></li>
-                                <li><a href="#">Links</a></li>
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="<?php echo e(URL('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(URL('/about')); ?>">About us</a></li>
+                                <li><a href="<?php echo e(URL('/courses')); ?>">Courses</a></li>
+                                <li><a href="<?php echo e(URL('/news')); ?>">News</a></li>
+                                <li><a href="<?php echo e(URL('/contact')); ?>">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -208,15 +208,15 @@
                             <div class="footer_contact_info">
                                 <div class="footer_contact_item">
                                     <div class="footer_contact_title">Address:</div>
-                                    <div class="footer_contact_line">1481 Creekside Lane Avila Beach, CA 93424</div>
+                                    <div class="footer_contact_line">ALearn Avenue, Yaba College of Technology, Lagos, Nigeria.</div>
                                 </div>
                                 <div class="footer_contact_item">
                                     <div class="footer_contact_title">Phone:</div>
-                                    <div class="footer_contact_line">+53 345 7953 32453</div>
+                                    <div class="footer_contact_line">(+234) 812 345 6789</div>
                                 </div>
                                 <div class="footer_contact_item">
                                     <div class="footer_contact_title">Email:</div>
-                                    <div class="footer_contact_line">yourmail@gmail.com</div>
+                                    <div class="footer_contact_line">alearn@gmail.com</div>
                                 </div>
                             </div>
                         </div>

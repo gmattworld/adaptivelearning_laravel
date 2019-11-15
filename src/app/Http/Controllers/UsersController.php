@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Users\ChangePasswordRequest;
 use App\Repositories\Interfaces\IUserRepository;
 use App\Repositories\Interfaces\IUserTypeRepository;
-use App\User;
+use App\entity\User;
 use App\Http\Requests\Users\UserUpdateRequest;
 use App\Http\Requests\Users\UserCreateRequest;
 use Illuminate\Support\Facades\Auth;

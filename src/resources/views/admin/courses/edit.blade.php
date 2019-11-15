@@ -2,7 +2,7 @@
 
 @section('pageheader')
     <!-- BEGIN PAGE HEADER-->
-    <h1 class="page-title"> Categories Management
+    <h1 class="page-title"> Course Management
         <small></small>
     </h1>
     <div class="page-bar">
@@ -14,11 +14,11 @@
             </li>
             <li>
                 <i class="icon-user"></i>
-                <a href="{{ URL('/admin/categories') }}">Categories</a>
+                <a href="{{ URL('/admin/courses') }}">Courses</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <span>Edit Category</span>
+                <span>Edit Course</span>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -56,7 +56,7 @@
         <div class="tabbable-line boxless tabbable-reversed">
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#tab_2" data-toggle="tab"> Edit Category </a>
+                    <a href="#tab_2" data-toggle="tab"> Edit Course </a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -64,7 +64,7 @@
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>Category Information </div>
+                                <i class="fa fa-gift"></i>Course Information </div>
                             <div class="tools">
                                 <a href="javascript:;" class="collapse"> </a>
                                 <a href="javascript:;" class="reload"> </a>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            {!! Form::open(['action' => ['CategoryController@update', $model->id], 'class'=>'form-horizontal', 'method'=>'POST', 'id'=>'form_validation']) !!}
+                            {!! Form::open(['action' => ['CourseController@update', $model->id], 'class'=>'form-horizontal', 'method'=>'POST', 'id'=>'form_validation']) !!}
                                 <div class="form-body">
                                     {{-- <h3 class="form-section">Person Info</h3> --}}
                                     @include('inc.message')
@@ -94,6 +94,14 @@
                                                 <div class="col-md-9">
                                                     {!! Form::text('code', $model->code, ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Code']) !!}
                                                     <span class="text-danger"> {!! $errors->first('code'); !!} </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                {!! Form::label('level_id', 'Level', ['class'=>'control-label col-md-3']) !!}
+                                                <div class="col-md-9">
+                                                    {!! Form::select('level_id', $levels, $model->level_id, ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Select Level']) !!}
+                                                    <span class="text-danger"> {!! $errors->first('level_id'); !!} </span>
                                                 </div>
                                             </div>
 

@@ -13,7 +13,7 @@
                             <div class="home_title">About us</div>
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ URL('/') }}">Home</a></li>
                                     <li>About us</li>
                                 </ul>
                             </div>
@@ -32,7 +32,19 @@
                     <div class="about_content">
                         <div class="about_title">Our Platform's main goal</div>
                         <div class="about_text">
-                            <p>Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh, consequat ornare nibh. Quisque vitae odio ligula.</p>
+                            <p>
+                                The basic idea of adaptivity in learning is the ability to modify the presentation of
+                                material in response to student’s performance. The system will serve as a centralized
+                                database of syllabus for the courses offered at the university allowing students and
+                                faculties (current, past and prospective), to view them. The system will end up bringing
+                                an effective communication among students, lectures, and the administration, by
+                                accessing information and other resources anytime, anywhere.<br />
+                                E-Learning represents an innovative shift in the field of learning, providing rapid access
+                                to specific knowledge and information. It offers online instruction that can be delivered
+                                anytime and anywhere through a wide range of electronic learning solutions such as
+                                Web-based courseware. E-learning would enable institutions transcend distance by
+                                providing a cohesive virtual learning environment.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -46,9 +58,17 @@
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1">
                     <div class="about_content">
-                        <div class="about_title">eLearn's Vision</div>
+                        <div class="about_title">aLearn's Vision</div>
                         <div class="about_text">
-                            <p>Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh.</p>
+                            <p>
+                                To reduce learning cost: E-Learning does not involve the use of papers, no delays,
+                                and no travel expenses, thereby reducing the cost of acquiring knowledge. Such
+                                learning enables learners or students to take what they have just learned from their
+                                computer screens and apply it to the tasks or project at hand.
+                            </p>
+                            <p>
+                                To improve flexibility of course delivery, that is, tailoring the learning process to the individual student’s style.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +128,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="teachers_title text-center">Meet the Teachers</div>
+                    <div class="teachers_title text-center">Meet the Team</div>
                 </div>
             </div>
             <div class="row teachers_row">
@@ -118,7 +138,7 @@
                     <div class="teacher">
                         <div class="teacher_image"><img src="{{ URL::asset('client/images/teacher_1.jpg') }}" alt="https://unsplash.com/nickkarvounis"></div>
                         <div class="teacher_body text-center">
-                            <div class="teacher_title"><a href="#">Jonathan Smith</a></div>
+                            <div class="teacher_title"><a href="#">Mac Eva Linkon</a></div>
                             <div class="teacher_subtitle">Marketing</div>
                             <div class="teacher_social">
                                 <ul>
@@ -156,7 +176,7 @@
                     <div class="teacher">
                         <div class="teacher_image"><img src="{{ URL::asset('client/images/teacher_3.jpg') }}" alt="https://unsplash.com/taylor_grote"></div>
                         <div class="teacher_body text-center">
-                            <div class="teacher_title"><a href="#">Jack Gallagan</a></div>
+                            <div class="teacher_title"><a href="#">Odumosu Damilola</a></div>
                             <div class="teacher_subtitle">Marketing</div>
                             <div class="teacher_social">
                                 <ul>
@@ -168,69 +188,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Teacher -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="teacher">
-                        <div class="teacher_image"><img src="{{ URL::asset('client/images/teacher_4.jpg') }}" alt="https://unsplash.com/benjaminrobyn"></div>
-                        <div class="teacher_body text-center">
-                            <div class="teacher_title"><a href="#">Christinne Smith</a></div>
-                            <div class="teacher_subtitle">Marketing</div>
-                            <div class="teacher_social">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teacher -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="teacher">
-                        <div class="teacher_image"><img src="{{ URL::asset('client/images/teacher_5.jpg') }}" alt="https://unsplash.com/christinhumephoto"></div>
-                        <div class="teacher_body text-center">
-                            <div class="teacher_title"><a href="#">Michelle Williams</a></div>
-                            <div class="teacher_subtitle">Art & Design</div>
-                            <div class="teacher_social">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teacher -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="teacher">
-                        <div class="teacher_image"><img src="{{ URL::asset('client/images/teacher_6.jpg') }}" alt="https://unsplash.com/rawpixel"></div>
-                        <div class="teacher_body text-center">
-                            <div class="teacher_title"><a href="#">Jack Gallagan</a></div>
-                            <div class="teacher_subtitle">Marketing</div>
-                            <div class="teacher_social">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <div class="button teachers_button"><a href="#">see all teachers<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
                 </div>
             </div>
         </div>

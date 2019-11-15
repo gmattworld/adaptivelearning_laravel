@@ -108,6 +108,7 @@
                             </th>
                             <th> Name </th>
                             <th> Code </th>
+                            <th> School </th>
                             <th> Status </th>
                             <th> Date Created </th>
                             <th> Actions </th>
@@ -125,6 +126,7 @@
                                     </td>
                                     <td>{!! $item->name !!}</td>
                                     <td>{!! $item->code !!}</td>
+                                    <td>{!! $item->school->name !!}</td>
                                     <td>
                                         <span class="label label-sm {{ $item->is_active ? 'label-success' : 'label-danger' }}"> {{ $item->is_active ? 'Active' : 'Disabled' }} </span>
                                     </td>

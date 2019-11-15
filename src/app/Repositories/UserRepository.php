@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 
-use App\User;
+use App\entity\User;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\Interfaces\IUserRepository;
 

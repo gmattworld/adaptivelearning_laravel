@@ -53,6 +53,9 @@
                 </div>
             </div>
             <div class="col-sm-8 text-right">
+                <div class="forgot-password">
+                    <a href="{{ route('register') }}" class="forget-password">Create an account</a>
+                </div>
                 @if (Route::has('password.request'))
                     <div class="forgot-password">
                         <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>

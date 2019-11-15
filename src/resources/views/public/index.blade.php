@@ -21,11 +21,16 @@
                                         <div class="home_logo"><img src="{{ URL::asset('client/images/home_logo.png') }}" alt=""></div>
                                         <div class="home_text">
                                             <div class="home_title">CS Adaptive E-Learning</div>
-                                            <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
+                                            <div class="home_subtitle">
+                                                E-Learning or technology in learning has become a buzz in the education industry and
+                                                today it caters for the needs of modern-day learners. Infusing technologies in classroom
+                                                learning have added to stimulus and enhanced learner's interaction within the classroom
+                                                and also outside the classroom.
+                                            </div>
                                         </div>
                                         <div class="home_buttons">
-                                            <div class="button home_button"><a href="#">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
-                                            <div class="button home_button"><a href="#">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/about') }}">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/courses') }}">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -46,11 +51,16 @@
                                         <div class="home_logo"><img src="{{ URL::asset('client/images/home_logo.png') }}" alt=""></div>
                                         <div class="home_text">
                                             <div class="home_title">CS Adaptive E-Learning</div>
-                                            <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
+                                            <div class="home_subtitle">
+                                                E-Learning or technology in learning has become a buzz in the education industry and
+                                                today it caters for the needs of modern-day learners. Infusing technologies in classroom
+                                                learning have added to stimulus and enhanced learner's interaction within the classroom
+                                                and also outside the classroom.
+                                            </div>
                                         </div>
                                         <div class="home_buttons">
-                                            <div class="button home_button"><a href="#">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
-                                            <div class="button home_button"><a href="#">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/about') }}">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/courses') }}">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -71,11 +81,16 @@
                                         <div class="home_logo"><img src="{{ URL::asset('client/images/home_logo.png') }}" alt=""></div>
                                         <div class="home_text">
                                             <div class="home_title">CS Adaptive E-Learning</div>
-                                            <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
+                                            <div class="home_subtitle">
+                                                E-Learning or technology in learning has become a buzz in the education industry and
+                                                today it caters for the needs of modern-day learners. Infusing technologies in classroom
+                                                learning have added to stimulus and enhanced learner's interaction within the classroom
+                                                and also outside the classroom.
+                                            </div>
                                         </div>
                                         <div class="home_buttons">
-                                            <div class="button home_button"><a href="#">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
-                                            <div class="button home_button"><a href="#">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/about') }}">learn more<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+                                            <div class="button home_button"><a href="{{ URL('/courses') }}">see all courses<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +111,9 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="section_title text-center"><h2>Choose your course</h2></div>
-                    <div class="section_subtitle">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
+                    <div class="section_subtitle">
+                        We give you access to various computer science courses ranging from Introduction to Computer Science to Advance Computer Science courses like Implementation of Artificial Intelligent Driven Solutions.
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -116,67 +133,31 @@
                     <!-- Courses Slider -->
                     <div class="courses_slider_container">
                         <div class="owl-carousel owl-theme courses_slider">
-
-                            <!-- Slider Item -->
-                            <div class="owl-item">
-                                <div class="course">
-                                    <div class="course_image"><img src="{{ URL::asset('client/images/course_1.jpg') }}" alt=""></div>
-                                    <div class="course_body">
-                                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                            <div class="course_tag"><a href="#">Featured</a></div>
-                                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                                        </div>
-                                        <div class="course_title"><h3><a href="courses.html">Online Literature Course</a></h3></div>
-                                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                                        <div class="course_footer d-flex align-items-center justify-content-start">
-                                            <div class="course_author_image"><img src="{{ URL::asset('client/images/featured_author.jpg') }}" alt="https://unsplash.com/anthonytran"></div>
-                                            <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
-                                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slider Item -->
-                            <div class="owl-item">
-                                <div class="course">
-                                    <div class="course_image"><img src="{{ URL::asset('client/images/course_2.jpg') }}" alt=""></div>
-                                    <div class="course_body">
-                                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                            <div class="course_tag"><a href="#">New</a></div>
-                                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                                        </div>
-                                        <div class="course_title"><h3><a href="courses.html">Social Media Course</a></h3></div>
-                                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                                        <div class="course_footer d-flex align-items-center justify-content-start">
-                                            <div class="course_author_image"><img src="{{ URL::asset('client/images/course_author_2.jpg') }}" alt=""></div>
-                                            <div class="course_author_name">By <a href="#">Mark Smith</a></div>
-                                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
+                            @if(count($courses) > 0)
+                                @foreach($courses as $course)
+                                    <!-- Slider Item -->
+                                    <div class="owl-item">
+                                        <div class="course">
+                                            <div class="course_image"><img src="{{ URL::asset('/storage/cover_images/'. $course->cover_img) }}" alt=""></div>
+                                            <div class="course_body">
+                                                <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                                                    {{-- <div class="course_tag"><a href="#">{{ $course->category->name }}</a></div> --}}
+                                                    {{-- <div class="course_price ml-auto">Price: <span>$35</span></div> --}}
+                                                </div>
+                                                <div class="course_title"><h3><a href="{{ URL('/courses/'.$course->id) }}">{{ $course->name }}</a></h3></div>
+                                                <div class="course_text">{{ $course->brief }}</div>
+                                                <div class="course_footer d-flex align-items-center justify-content-start">
+                                                    <div class="course_author_image"><img src="{{ URL::asset('client/images/featured_author.jpg') }}"></div>
+                                                    {{-- <div class="course_author_name">By <a href="#">{{ $course->user->name }}</a></div> --}}
+                                                    <div class="course_sales ml-auto"><span>{{ $course->views }}</span> Views</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Slider Item -->
-                            <div class="owl-item">
-                                <div class="course">
-                                    <div class="course_image"><img src="{{ URL::asset('client/images/course_3.jpg') }}" alt="https://unsplash.com/annademy"></div>
-                                    <div class="course_body">
-                                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                                            <div class="course_tag"><a href="#">Featured</a></div>
-                                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                                        </div>
-                                        <div class="course_title"><h3><a href="courses.html">Marketing Course</a></h3></div>
-                                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                                        <div class="course_footer d-flex align-items-center justify-content-start">
-                                            <div class="course_author_image"><img src="{{ URL::asset('client/images/course_author_3.jpg') }}" alt=""></div>
-                                            <div class="course_author_name">By <a href="#">Julia Williams</a></div>
-                                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                @endforeach
+                            @else
+                                <div class="col-sm-12"><h4 class="text-center"><strong>We are still working on our courses, Kindly check back!</strong></h4></div>
+                            @endif
                         </div>
 
                         <!-- Courses Slider Nav -->
@@ -245,11 +226,15 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="section_title text-center"><h2>Join Our Platform Today</h2></div>
-                    <div class="section_subtitle">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
+                    <div class="section_subtitle">
+                        There are many web-based learning and e-learning systems available on the Internet,
+                        they provide only the same plain hypertext pages to all students regardless of individual
+                        ability, but <strong>We adapt to your learning system!</strong>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="button join_button"><a href="#">register now<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
+        <div class="button join_button"><a href="{{ URL('/register') }}">register now<div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a></div>
     </div>
 @endsection
 

@@ -20,8 +20,6 @@ Route::post('/SendMessage','HomeController@SaveContact')->name('SendMessage');
 
 
 // Others
-Route::redirect('/register', '/login');
-Route::redirect('/account', '/login');
 Route::redirect('/admin', '/admin/dashboard');
 Route::redirect('/home', '/admin/dashboard');
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
@@ -30,6 +28,9 @@ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     // Route::redirect('/', '/dashboard');
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    Route::get('/adaptive', 'DashboardController@adaptive');
+    Route::post('/adaptive_s', 'DashboardController@save_adaptive');
 
     Route::get('/profile', 'UsersController@profile');
     Route::get('/dockets', 'CasesController@dockets');
@@ -40,11 +41,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/users/{id}/status', 'UsersController@status');
     Route::get('/users/{id}/resetpassword', 'UsersController@ResetPassword');
     Route::get('/usertypes/{id}/status', 'UserTypeController@status');
+    Route::get('/schools/{id}/status', 'SchoolController@status');
+    Route::get('/levels/{id}/status', 'LevelController@status');
+    Route::get('/courses/{id}/status', 'CourseController@status');
+    Route::get('/subjects/{id}/status', 'SubjectController@status');
+    Route::get('/schools/{id}/status', 'SchoolController@status');
 
     Route::get('/categories/{id}/status', 'CategoryController@status');
     Route::get('/departments/{id}/status', 'DepartmentController@status');
 
-    Route::get('/archives/{id}/status', 'ArchiveController@status');
+
+
     Route::get('/cases/{id}/status', 'CasesController@status');
     Route::get('/clients/{id}/status', 'ClientController@status');
     Route::get('/courts/{id}/status', 'CourtController@status');
@@ -62,21 +69,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     // Resources
     Route::resource('/users', 'UsersController');
     Route::resource('/usertypes', 'UserTypeController');
-    Route::resource('/categories', 'CategoryController');
+    Route::resource('/userroles', 'UserRoleController');
+    Route::resource('/schools', 'SchoolController');
     Route::resource('/departments', 'DepartmentController');
-    Route::resource('/userroles', 'UserRoleController');
-    Route::resource('/archives', 'ArchiveController');
-    Route::resource('/cases', 'CasesController');
-    Route::resource('/clients', 'ClientController');
-    Route::resource('/courts', 'CourtController');
-    Route::resource('/courtcases', 'CourtCaseController');
-    Route::resource('/courtrooms', 'CourtRoomController');
-    Route::resource('/lawyers', 'LawyerController');
-    Route::resource('/lawyerqualifications', 'LawyerQualificationController');
+    Route::resource('/levels', 'LevelController');
+    Route::resource('/courses', 'CourseController');
+    Route::resource('/subjects', 'SubjectController');
+    Route::resource('/resources', 'ResourceController');
     Route::resource('/posts', 'PostController');
-    Route::resource('/efilings', 'EfilingController');
-    Route::resource('/qualifications', 'QualificationController');
-    Route::resource('/userroles', 'UserRoleController');
+
+
+    Route::resource('/clients', 'ClientController');
 });
 
 

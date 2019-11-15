@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\Interfaces\IPostRepository;
-use App\Repositories\Interfaces\ICategoryRepository;
-use App\Post;
+use App\Repositories\Interfaces\ISubjectRepository;
+use App\entity\Post;
 use App\Http\Requests\Post\PostUpdateRequest;
 use App\Http\Requests\Post\PostCreateRequest;
 
 class PostController extends Controller
 {
     protected $Post;
-    protected $Category;
-    public function __construct(IPostRepository $IPost, ICategoryRepository $ICategory)
+    protected $Subject;
+    public function __construct(IPostRepository $IPost, ISubjectRepository $ISubject)
     {
         $this->Post = $IPost;
-        $this->Category = $ICategory;
+        $this->Subject = $ISubject;
     }
 
     /**
@@ -36,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = $this->Category->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
+        $categories = $this->Subject->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
         return view("admin.posts.create")->with(['active'=>'posts', 'subactive'=>'post', 'categories'=>$categories]);
     }
 
@@ -48,7 +48,7 @@ class PostController extends Controller
      */
     public function store(PostCreateRequest $request)
     {
-        $categories = $this->Category->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
+        $categories = $this->Subject->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
 
         // Validated Request
         $data = $request->validated();
@@ -105,7 +105,7 @@ class PostController extends Controller
      */
     public function edit(int $id)
     {
-        $categories = $this->Category->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
+        $categories = $this->Subject->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
         $model = $this->Post->GetByID($id);
         if ($model == null) {
             return redirect('/admin/posts')->with(['error' => 'Posts not found!']);
@@ -122,7 +122,7 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, int $id)
     {
-        $categories = $this->Category->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
+        $categories = $this->Subject->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
 
         // Validated Request
         $data = $request->validated();

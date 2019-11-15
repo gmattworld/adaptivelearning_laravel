@@ -4,7 +4,7 @@ namespace App\Http\Requests\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\UserRepository;
-use App\User;
+use App\entity\User;
 
 class UserUpdateRequest extends FormRequest
 {

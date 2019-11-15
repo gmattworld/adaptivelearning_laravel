@@ -10,11 +10,11 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content text-center">
-                        <div class="home_title">About us</div>
+                        <div class="home_title">Courses</div>
                         <div class="breadcrumbs">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li>About us</li>
+                                <li><a href="<?php echo e(URL('/')); ?>">Home</a></li>
+                                <li>Courses</li>
                             </ul>
                         </div>
                     </div>
@@ -31,7 +31,9 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="section_title text-center"><h2>Choose your course</h2></div>
-                <div class="section_subtitle">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
+                <div class="section_subtitle">
+                    We give you access to various computer science courses ranging from Introduction to Computer Science to Advance Computer Science courses like Implementation of Artificial Intelligent Driven Solutions.
+                </div>
             </div>
         </div>
 
@@ -50,199 +52,39 @@
 
         <div class="row courses_row">
 
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_1.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Literature Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/featured_author.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_2.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">New</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Social Media Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_2.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Mark Smith</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
+            <?php if(count($courses) > 0): ?>
+                <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <!-- Course -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course">
+                            <div class="course_image"><img src="<?php echo e(URL::asset('/storage/cover_images/'. $course->cover_img)); ?>" alt=""></div>
+                            <div class="course_body">
+                                <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                                    
+                                    
+                                </div>
+                                <div class="course_title"><h3><a href="<?php echo e(URL('/courses/'.$course->id)); ?>"><?php echo e($course->name); ?></a></h3></div>
+                                <div class="course_text"><?php echo e($course->brief); ?></div>
+                                <div class="course_footer d-flex align-items-center justify-content-start">
+                                    <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/featured_author.jpg')); ?>"></div>
+                                    
+                                    <div class="course_sales ml-auto"><span><?php echo e($course->views); ?></span> Views</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_3.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Marketing Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_3.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Julia Williams</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_4.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Literature Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/featured_author.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_5.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">New</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Social Media Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_2.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Mark Smith</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_6.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Marketing Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_3.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Julia Williams</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_7.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Literature Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/featured_author.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">James S. Morrison</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_8.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">New</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Social Media Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_2.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Mark Smith</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course -->
-            <div class="col-lg-4 col-md-6">
-                <div class="course">
-                    <div class="course_image"><img src="<?php echo e(URL::asset('client/images/course_9.jpg')); ?>" alt=""></div>
-                    <div class="course_body">
-                        <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_tag"><a href="#">Featured</a></div>
-                            <div class="course_price ml-auto">Price: <span>$35</span></div>
-                        </div>
-                        <div class="course_title"><h3><a href="courses.html">Online Marketing Course</a></h3></div>
-                        <div class="course_text">Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.</div>
-                        <div class="course_footer d-flex align-items-center justify-content-start">
-                            <div class="course_author_image"><img src="<?php echo e(URL::asset('client/images/course_author_3.jpg')); ?>" alt="https://unsplash.com/anthonytran"></div>
-                            <div class="course_author_name">By <a href="#">Julia Williams</a></div>
-                            <div class="course_sales ml-auto"><span>352</span> Sales</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php else: ?>
+                <div class="col-sm-12"><h4 class="text-center"><strong>We are still working on our courses, Kindly check back!</strong></h4></div>
+            <?php endif; ?>
         </div>
 
         <!-- Pagination -->
         <div class="row">
             <div class="col">
                 <div class="courses_paginations">
-                    <ul>
-                        <li class="active"><a href="#">01</a></li>
-                        <li><a href="#">02</a></li>
-                        <li><a href="#">03</a></li>
-                        <li><a href="#">04</a></li>
-                        <li><a href="#">05</a></li>
-                    </ul>
+                    <?php echo e($courses->links()); ?>
+
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\IContactRepository;
-use App\Contact;
+use App\entity\Contact;
 
 class ContactRepository extends BaseRepository implements IContactRepository
 {

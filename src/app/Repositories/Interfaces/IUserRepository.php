@@ -2,8 +2,6 @@
 
 namespace App\Repositories\Interfaces;
 
-use App\User;
-
 interface IUserRepository
 {
     public function SaveUser(string $lastName, string $otherNames, string $username, string $email, string $phone, string $address, int $user_type_id, string $dp_image, bool $status);

@@ -95,7 +95,13 @@
                                                     <span class="text-danger"> {!! $errors->first('code'); !!} </span>
                                                 </div>
                                             </div>
-
+                                            <div class="form-group">
+                                                {!! Form::label('school_id', 'School', ['class'=>'control-label col-md-3']) !!}
+                                                <div class="col-md-9">
+                                                    {!! Form::select('school_id', $schools, $model->school_id, ['class'=>'form-control', 'required'=>'required', 'placeholder'=>' Select School']) !!}
+                                                    <span class="text-danger"> {!! $errors->first('school_id'); !!} </span>
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 {!! Form::label('description', 'Description', ['class'=>'control-label col-md-3']) !!}
                                                 <div class="col-md-9">

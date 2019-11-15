@@ -34,13 +34,13 @@ class school  extends Model
     protected $casts = [
     ];
 
-    // public function post()
-    // {
-    //     return $this->hasMany('App\Post');
-    // }
+    public function department()
+    {
+        return $this->hasMany('App\entity\department');
+    }
 
     // public function cases()
     // {
-    //     return $this->hasMany('App\Cases');
+    //     return $this->hasMany('App\entity\Cases');
     // }
 }

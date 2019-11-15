@@ -26,6 +26,7 @@ class DepartmentCreateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:50', 'unique:departments,name'],
             'code' => ['required', 'string', 'max:50', 'unique:departments,code'],
+            'school_id' => ['required', 'integer', 'digits_between:1,11', 'exists:schools,id'],
             'description' => ['required', 'string', 'max:2000'],
         ];
     }

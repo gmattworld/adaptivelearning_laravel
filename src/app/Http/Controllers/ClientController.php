@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Interfaces\IClientRepository;
 use App\Repositories\Interfaces\IUserTypeRepository;
-use App\Client;
+use App\entity\Client;
 use App\Http\Requests\Client\ClientUpdateRequest;
 use App\Http\Requests\Client\ClientCreateRequest;
 

@@ -15,7 +15,7 @@ class course extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'code', 'is_active'
+        'name', 'description', 'code', 'level_id', 'is_active'
     ];
 
     /**
@@ -34,13 +34,13 @@ class course extends Model
     protected $casts = [
     ];
 
-    public function post()
+    public function level()
     {
-        return $this->hasMany('App\Post');
+        return $this->belongsTo('App\entity\level');
     }
 
-    public function cases()
+    public function subject()
     {
-        return $this->hasMany('App\Cases');
+        return $this->hasMany('App\entity\subject');
     }
 }

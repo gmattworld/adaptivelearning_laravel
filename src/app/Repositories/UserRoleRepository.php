@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Interfaces\IUserRoleRepository;
-use App\UserRole;
+use App\entity\UserRole;
 
 class UserRoleRepository extends BaseRepository implements IUserRoleRepository
 {

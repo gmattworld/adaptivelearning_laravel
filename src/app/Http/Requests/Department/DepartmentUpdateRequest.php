@@ -4,7 +4,7 @@ namespace App\Http\Requests\Department;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\DepartmentRepository;
-use App\Department;
+use App\entity\Department;
 
 class DepartmentUpdateRequest extends FormRequest
 {
@@ -28,6 +28,7 @@ class DepartmentUpdateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:50'],
             'code' => ['required', 'string', 'max:50'],
+            'school_id' => ['required', 'integer', 'digits_between:1,11', 'exists:schools,id'],
             'description' => ['required', 'string', 'max:2000'],
         ];
     }

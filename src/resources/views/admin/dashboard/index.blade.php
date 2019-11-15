@@ -128,7 +128,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(count($ongoingcases) > 0)
+                        {{-- @if(count($ongoingcases) > 0)
                             @foreach($ongoingcases as $item)
                                 <tr class="odd gradeX">
                                     <td>
@@ -161,7 +161,7 @@
                             @endforeach
                         @else
                             <tr><td colspan="7" class="text-center"> <h3>No Ongoing Case</h3> </td></tr>
-                        @endif
+                        @endif --}}
                     </tbody>
                 </table>
             </div>
@@ -194,7 +194,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(count($pendingcases) > 0)
+                        {{-- @if(count($pendingcases) > 0)
                             @foreach($pendingcases as $item)
                                 <tr class="odd gradeX">
                                     <td>
@@ -227,7 +227,7 @@
                             @endforeach
                         @else
                             <tr><td colspan="7" class="text-center"> <h3>No Case Pending</h3> </td></tr>
-                        @endif
+                        @endif --}}
                     </tbody>
                 </table>
             </div>

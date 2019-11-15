@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('othernames');
             $table->string('phone');
             $table->string('dp_image');
+            $table->string('read_type')->nullable();
             $table->text('address');
             $table->boolean('is_logged_out');
             $table->integer('user_type_id');

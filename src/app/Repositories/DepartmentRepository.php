@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\IDepartmentRepository;
-use App\Department;
+use App\entity\Department;
 
 class DepartmentRepository extends BaseRepository implements IDepartmentRepository
 {
@@ -24,21 +24,23 @@ class DepartmentRepository extends BaseRepository implements IDepartmentReposito
         return $this->model;
     }
 
-    public function SaveDepartment(string $name, string $code, string $description, bool $status)
+    public function SaveDepartment(string $name, string $code, string $description, int $school_id, bool $status)
     {
         return $this->save([
             'name' => $name,
             'code' => $code,
             'description' => $description,
+            'school_id' => $school_id,
             'is_active' => $status
         ]);
     }
 
-    public function UpdateDepartment(string $name, string $code, string $description, int $id) {
+    public function UpdateDepartment(string $name, string $code, string $description, int $school_id, int $id) {
         $data = [
             'name' => $name,
             'code' => $code,
-            'description' => $description
+            'description' => $description,
+            'school_id' => $school_id
         ];
 
         return $this->update($data, $id);

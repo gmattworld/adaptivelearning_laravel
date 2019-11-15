@@ -17,6 +17,7 @@ class CreateLevelsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('code');
+            $table->integer('department_id');
             $table->text('description');
             $table->boolean('is_active');
             $table->timestamps();

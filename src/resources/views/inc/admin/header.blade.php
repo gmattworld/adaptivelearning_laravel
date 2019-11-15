@@ -5,7 +5,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{ URL('/admin/dashboard') }}">
-                <div class="h2" style="color:#fff;"><strong>IHC</strong></div>
+                <div class="h2" style="color:#fff;"><strong>ALearn</strong></div>
                 {{-- <img src="{{ URL::asset('admin/assets/layouts/layout2/img/logo-default.png') }}" alt="logo" class="logo-default" /> --}}
             </a>
             <div class="menu-toggler sidebar-toggler">

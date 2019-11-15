@@ -126,7 +126,7 @@
                                     </td>
                                     <td>{!! $item->lastname !!}</td>
                                     <td>{!! $item->othernames !!}</td>
-                                    <td>{!! $item->user_type->name !!}</td>
+                                    <td>{{ $item->user_type_id == 0? "Student" : $item->user_type->name }}</td>
                                     <td>
                                         <span class="label label-sm {{ $item->is_logged_out ? 'label-success' : 'label-danger' }}"> {{ $item->is_logged_out ? 'Active' : 'Disabled' }} </span>
                                     </td>

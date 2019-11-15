@@ -90,6 +90,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label class="control-label col-md-3">School:</label>
+                                                <div class="col-md-9">
+                                                    <p class="form-control-static"> {{ $model->school->name }} </p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="control-label col-md-3">Description:</label>
                                                 <div class="col-md-9">
                                                     <p class="form-control-static"> {{ $model->description }} </p>

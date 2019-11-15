@@ -4,7 +4,7 @@ namespace App\Http\Requests\UserTypes;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\UserTypeRepository;
-use App\UserType;
+use App\entity\UserType;
 
 class UserTypeUpdateRequest extends FormRequest
 {

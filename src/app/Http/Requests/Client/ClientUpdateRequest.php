@@ -4,7 +4,7 @@ namespace App\Http\Requests\Client;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\ClientRepository;
-use App\Client;
+use App\entity\Client;
 
 class ClientUpdateRequest extends FormRequest
 {

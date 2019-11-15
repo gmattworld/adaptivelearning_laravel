@@ -4,7 +4,7 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\PostRepository;
-use App\Post;
+use App\entity\Post;
 
 class PostCreateRequest extends FormRequest
 {
@@ -29,7 +29,7 @@ class PostCreateRequest extends FormRequest
             'cover_img' => ['required', 'image', 'max:1999'],
             //'post_banner' => ['required', 'image(jpeg, png, jpg)', 'max:1999'],
             //'is_ext_src' => ['required', 'string', 'max:100'],
-            'category_id' => ['required', 'integer', 'digits_between:1,11', 'exists:categories,id'],
+            'category_id' => ['required', 'integer', 'digits_between:1,11', 'exists:subjects,id'],
             'topic' => ['required', 'string', 'min:5', 'max:200'],
             'body' => ['required', 'string', 'min:5'],
             'brief' => ['required', 'string', 'min:4', 'max:1000'],

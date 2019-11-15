@@ -68,6 +68,9 @@ endif; ?>" name="password" required autocomplete="off">
                 </div>
             </div>
             <div class="col-sm-8 text-right">
+                <div class="forgot-password">
+                    <a href="<?php echo e(route('register')); ?>" class="forget-password">Create an account</a>
+                </div>
                 <?php if(Route::has('password.request')): ?>
                     <div class="forgot-password">
                         <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>

@@ -41,8 +41,9 @@
         <div class="user-login-5">
             <div class="row bs-reset">
                 <div class="col-md-6 bs-reset mt-login-5-bsfix">
-                    <div class="login-bg" style="background-image:url({{ URL::asset('admin/assets/pages/img/login/bg1.jpg') }})">
-                        <img class="login-logo" src="{{ URL::asset('admin/assets/pages/img/login/logo.png') }}" /> </div>
+                    <div class="login-bg" style="background-image:url({{ URL::asset('admin/assets/pages/img/login/bg5.png') }})">
+                        <img class="login-logo" src="{{ URL::asset('admin/assets/pages/img/login/logo.png') }}" />
+                    </div>
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     @yield('content')
@@ -115,5 +116,4 @@
             })
         </script>
     </body>
-
 </html>

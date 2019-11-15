@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 
-use App\Client;
+use App\entity\Client;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\Interfaces\IClientRepository;
-use App\User as AppUser;
+use App\entity\User as AppUser;
 
 class ClientRepository extends BaseRepository implements IClientRepository
 {

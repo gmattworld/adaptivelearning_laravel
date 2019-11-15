@@ -2,7 +2,7 @@
 
 @section('pageheader')
     <!-- BEGIN PAGE HEADER-->
-    <h1 class="page-title"> Categories Management
+    <h1 class="page-title"> Subject Management
         <small></small>
     </h1>
     <div class="page-bar">
@@ -13,7 +13,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <span>Categories</span>
+                <span>Subjects</span>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -53,7 +53,7 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <i class="icon-user font-dark"></i>
-                    <span class="caption-subject bold uppercase"> Categories Management</span>
+                    <span class="caption-subject bold uppercase"> Subject Management</span>
                 </div>
                 <div class="actions">
                     <div class="btn-group btn-group-devided" data-toggle="buttons">
@@ -69,7 +69,7 @@
                         <div class="col-md-12">@include('inc.message')</div>
                         <div class="col-md-6">
                             <div class="btn-group">
-                                <a href="{{ URL('/admin/categories/create') }}" id="sample_editable_1_new" class="btn sbold green"> Add New
+                                <a href="{{ URL('/admin/subjects/create') }}" id="sample_editable_1_new" class="btn sbold green"> Add New
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
@@ -108,6 +108,7 @@
                             </th>
                             <th> Name </th>
                             <th> Code </th>
+                            <th> Course </th>
                             <th> Status </th>
                             <th> Date Created </th>
                             <th> Actions </th>
@@ -125,6 +126,7 @@
                                     </td>
                                     <td>{!! $item->name !!}</td>
                                     <td>{!! $item->code !!}</td>
+                                    <td>{!! $item->course->name !!}</td>
                                     <td>
                                         <span class="label label-sm {{ $item->is_active ? 'label-success' : 'label-danger' }}"> {{ $item->is_active ? 'Active' : 'Disabled' }} </span>
                                     </td>
@@ -136,13 +138,13 @@
                                             </button>
                                             <ul class="dropdown-menu pull-left" role="menu">
                                                 <li>
-                                                    <a href="{{ URL('/admin/categories/'. $item->id) }}"><i class="icon-eye"></i> View Details </a>
+                                                    <a href="{{ URL('/admin/subjects/'. $item->id) }}"><i class="icon-eye"></i> View Details </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ URL('/admin/categories/'. $item->id .'/status') }}"><i class="icon-key"></i> {{ $item->is_active ? 'Disable' : 'Enable' }} </a>
+                                                    <a href="{{ URL('/admin/subjects/'. $item->id .'/status') }}"><i class="icon-key"></i> {{ $item->is_active ? 'Disable' : 'Enable' }} </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ URL('/admin/categories/'. $item->id .'/edit') }}"><i class="icon-pencil"></i> Edit </a>
+                                                    <a href="{{ URL('/admin/subjects/'. $item->id .'/edit') }}"><i class="icon-pencil"></i> Edit </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -150,7 +152,7 @@
                                 </tr>
                             @endforeach
                         @else
-                            <tr><td colspan="6" class="text-center"> <h3>No Category created yet</h3> </td></tr>
+                            <tr><td colspan="6" class="text-center"> <h3>No Subject created yet</h3> </td></tr>
                         @endif
                     </tbody>
                 </table>

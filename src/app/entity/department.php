@@ -15,7 +15,7 @@ class department extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'code', 'is_active'
+        'name', 'description', 'code', 'school_id', 'is_active'
     ];
 
     /**
@@ -34,8 +34,13 @@ class department extends Model
     protected $casts = [
     ];
 
-    // public function user()
-    // {
-    //     return $this->hasMany('App\User');
-    // }
+    public function school()
+    {
+        return $this->belongsTo('App\entity\school');
+    }
+
+    public function level()
+    {
+        return $this->hasMany('App\entity\level');
+    }
 }

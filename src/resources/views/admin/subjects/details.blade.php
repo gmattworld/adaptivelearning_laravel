@@ -2,7 +2,7 @@
 
 @section('pageheader')
     <!-- BEGIN PAGE HEADER-->
-    <h1 class="page-title"> Categories Management
+    <h1 class="page-title"> Subject Management
         <small></small>
     </h1>
     <div class="page-bar">
@@ -14,11 +14,11 @@
             </li>
             <li>
                 <i class="icon-user"></i>
-                <a href="{{ URL('/admin/categories') }}">Categories</a>
+                <a href="{{ URL('/admin/subjects') }}">Subjects</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <span>Category Details</span>
+                <span>Subject Details</span>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -56,7 +56,7 @@
         <div class="tabbable-line boxless tabbable-reversed">
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#tab_3" data-toggle="tab"> Category Details </a>
+                    <a href="#tab_3" data-toggle="tab"> Subject Details </a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -65,7 +65,7 @@
                     <div class="portlet box blue">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>{{ $model->name }} Category Info.</div>
+                                <i class="fa fa-gift"></i>{{ $model->name }} Subject Info.</div>
                             <div class="tools">
                                 <a href="javascript:;" class="collapse"> </a>
                                 <a href="javascript:;" class="reload"> </a>
@@ -87,6 +87,12 @@
                                                 <label class="control-label col-md-3">Code:</label>
                                                 <div class="col-md-9">
                                                     <p class="form-control-static"> {{ $model->code }} </p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Course:</label>
+                                                <div class="col-md-9">
+                                                    <p class="form-control-static"> {{ $model->course->name }} </p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -115,9 +121,9 @@
                                         <div class="col-md-offset-2 col-md-8">
                                             <div class="row">
                                                 <div class="text-right">
-                                                    <a href="{{ URL('/admin/categories/'. $model->id .'/status') }}" class="btn {{ $model->is_active ? 'red' : 'green' }}">{{ $model->is_active ? 'Disable' : 'Enable' }}</a>
-                                                    <a href="{{ URL('/admin/categories/'. $model->id .'/edit') }}" class="btn blue">Edit</a>
-                                                    <a href="{{ URL('/admin/categories/') }}" class="btn default">Return to list</a>
+                                                    <a href="{{ URL('/admin/subjects/'. $model->id .'/status') }}" class="btn {{ $model->is_active ? 'red' : 'green' }}">{{ $model->is_active ? 'Disable' : 'Enable' }}</a>
+                                                    <a href="{{ URL('/admin/subjects/'. $model->id .'/edit') }}" class="btn blue">Edit</a>
+                                                    <a href="{{ URL('/admin/subjects/') }}" class="btn default">Return to list</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Department;
+use App\entity\Department;
 use App\Repositories\Interfaces\IDepartmentRepository;
 use App\Http\Requests\Department\DepartmentCreateRequest;
 use App\Http\Requests\Department\DepartmentUpdateRequest;
+use App\Repositories\Interfaces\ISchoolRepository;
 
 class DepartmentController extends Controller
 {
     protected $Department;
-    public function __construct(IDepartmentRepository $IDepartment)
+    protected $School;
+    public function __construct(IDepartmentRepository $IDepartment, ISchoolRepository $ISchool)
     {
         // $this->middleware('auth');
         $this->Department = $IDepartment;
+        $this->School = $ISchool;
     }
 
     /**
@@ -34,7 +37,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view("admin.departments.create")->with(['active'=>'department', 'subactive'=>'department']);
+        $schools = $this->School->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
+        return view("admin.departments.create")->with(['active'=>'department', 'subactive'=>'department', 'schools' => $schools]);
     }
 
     /**
@@ -45,6 +49,7 @@ class DepartmentController extends Controller
      */
     public function store(DepartmentCreateRequest $request)
     {
+        $schools = $this->School->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
         // Validated Request
         $data = $request->validated();
 
@@ -53,12 +58,13 @@ class DepartmentController extends Controller
             $data['name'],
             $data['code'],
             $data['description'],
+            $data['school_id'],
             true
         );
 
         // Check department created
         if ($entity == null) {
-            return redirect()->back()->withInput()->with(['error' => 'Error encountered while creating user, Please try again!']);
+            return redirect()->back()->withInput()->with(['error' => 'Error encountered while creating user, Please try again!', 'schools'=>$schools]);
         }
 
         return redirect("/admin/departments")->with(['success' => $entity->name.' Department Created!']);
@@ -87,11 +93,12 @@ class DepartmentController extends Controller
      */
     public function edit(int $id)
     {
+        $schools = $this->School->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
         $model = $this->Department->GetByID($id);
         if ($model == null) {
             return redirect('/admin/departments')->with(['error' => 'Departments not found!']);
         }
-        return view("admin.departments.edit")->with(['active'=>'department', 'subactive'=>'department', 'model'=>$model]);
+        return view("admin.departments.edit")->with(['active'=>'department', 'subactive'=>'department', 'model'=>$model, 'schools'=>$schools]);
     }
 
     /**
@@ -103,6 +110,7 @@ class DepartmentController extends Controller
      */
     public function update(DepartmentUpdateRequest $request, int $id)
     {
+        $schools = $this->School->GetAllAndOrder('name', 'asc')->pluck('name', 'id');
         // Validated Request
         $data = $request->validated();
 
@@ -110,11 +118,12 @@ class DepartmentController extends Controller
             $data['name'],
             $data['code'],
             $data['description'],
+            $data['school_id'],
             $id
         );
 
         if ($entity == null) {
-            return redirect()->back()->withInput()->with(['error' => 'Error encountered while updating user, Please try again!']);
+            return redirect()->back()->withInput()->with(['error' => 'Error encountered while updating user, Please try again!', 'schools' => $schools]);
         }
 
         return redirect("/admin/departments")->with(['success' => $entity->name.' Department Updated!']);

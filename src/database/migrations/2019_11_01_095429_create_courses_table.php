@@ -17,6 +17,7 @@ class CreateCoursesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('code');
+            $table->integer('level_id');
             $table->text('description');
             $table->boolean('is_active');
             $table->timestamps();

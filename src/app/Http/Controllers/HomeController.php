@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Interfaces\IPostRepository;
 use App\Repositories\Interfaces\IContactRepository;
-use App\Repositories\Interfaces\ICasesRepository;
 use App\Http\Requests\Contact\CreateContactRequest;
+use App\Repositories\Interfaces\ICourseRepository;
 
 class HomeController extends Controller
 {
     protected $Post;
+    protected $Course;
     protected $Contact;
-    protected $Cases;
-    public function __construct(IPostRepository $IPost, IContactRepository $IContact, ICasesRepository $ICases)
+    public function __construct(IPostRepository $IPost, IContactRepository $IContact, ICourseRepository $ICourse)
     {
         $this->Post = $IPost;
-        $this->Cases = $ICases;
+        $this->Course = $ICourse;
         $this->Contact = $IContact;
     }
 
@@ -27,9 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $posts = $this->Post->LatestPost(3);
-        // return view("public.index")->with(['posts'=>$posts]);
-        return view("public.index");
+        $courses = $this->Course->GetAllPaginated(12);
+        return view("public.index")->with(['courses'=>$courses]);
     }
 
     /**
@@ -114,8 +113,8 @@ class HomeController extends Controller
      */
     public function courses()
     {
-        $cases = $this->Cases->GetAllPaginated(12);
-        return view("public.courses")->with(['active'=>'users', 'subactive'=>'user', 'cases'=>$cases]);
+        $courses = $this->Course->GetAllPaginated(12);
+        return view("public.courses")->with(['active'=>'users', 'subactive'=>'user', 'courses'=>$courses]);
     }
 
 
@@ -126,8 +125,7 @@ class HomeController extends Controller
      */
     public function course()
     {
-        $cases = $this->Cases->GetAllPaginated(12);
-        return view("public.course")->with(['active'=>'users', 'subactive'=>'user', 'cases'=>$cases]);
+        return view("public.course")->with(['active'=>'users', 'subactive'=>'user']);
     }
 
 

@@ -12,7 +12,7 @@
                             <div class="home_title">Contact</div>
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="<?php echo e(URL('/')); ?>">Home</a></li>
                                     <li>Contact</li>
                                 </ul>
                             </div>
@@ -43,7 +43,12 @@
                                         </a>
                                     </div>
                                     <div class="contact_about_text">
-                                        <p>Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
+                                        <p>
+                                            The basic idea of adaptivity in learning is the ability to modify the presentation of
+                                            material in response to student’s performance. The system will serve as a centralized
+                                            database of syllabus for the courses offered at the university allowing students and
+                                            faculties (current, past and prospective), to view them.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -53,36 +58,53 @@
                                     <div class="contact_info">
                                         <div class="contact_info_item">
                                             <div class="contact_info_title">Address:</div>
-                                            <div class="contact_info_line">1481 Creekside Lane Avila Beach, CA 93424</div>
+                                            <div class="contact_info_line">ALearn Avenue, Yaba College of Technology, Lagos, Nigeria.</div>
                                         </div>
                                         <div class="contact_info_item">
                                             <div class="contact_info_title">Phone:</div>
-                                            <div class="contact_info_line">+53 345 7953 32453</div>
+                                            <div class="contact_info_line">(+234) 812 345 6789</div>
                                         </div>
                                         <div class="contact_info_item">
                                             <div class="contact_info_title">Email:</div>
-                                            <div class="contact_info_line">yourmailgmail.com</div>
+                                            <div class="contact_info_line">alearn@gmail.com</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="contact_form_container">
-                            <form action="#" id="contact_form" class="contact_form">
+                            <?php echo Form::open(['action' => 'HomeController@SaveContact', 'method'=>'POST', 'id'=>"contact_form", 'class'=>"contact_form"]); ?>
+
+                                <?php echo $__env->make('inc.message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo csrf_field(); ?>
                                 <div>
                                     <div class="row">
                                         <div class="col-lg-6 contact_name_col">
-                                            <input type="text" class="contact_input" placeholder="Name" required="required">
+                                            <?php echo Form::text('name', '', ['class'=>'contact_input', 'required'=>'required', 'placeholder'=>' Name']); ?>
+
+                                            <span class="text-danger"> <?php echo $errors->first('name');; ?> </span>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="email" class="contact_input" placeholder="E-mail" required="required">
+                                            <?php echo Form::email('email', '', ['class'=>'contact_input', 'required'=>'required', 'placeholder'=>' E-mail']); ?>
+
+                                            <span class="text-danger"> <?php echo $errors->first('email');; ?> </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div><input type="text" class="contact_input" placeholder="Subject" required="required"></div>
-                                <div><textarea class="contact_input contact_textarea" placeholder="Message"></textarea></div>
-                                <button class="contact_button"><span>send message</span><span class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-                            </form>
+                                <div>
+                                    <?php echo Form::text('subject', '', ['class'=>'contact_input', 'required'=>'required', 'placeholder'=>' Subject']); ?>
+
+                                    <span class="text-danger"> <?php echo $errors->first('subject');; ?> </span>
+                                </div>
+                                <div>
+                                    <?php echo Form::textarea('message', '', ['class'=>'contact_input contact_textarea', 'required'=>'required', 'placeholder'=>' Message']); ?>
+
+                                    <span class="text-danger"> <?php echo $errors->first('message');; ?> </span>
+                                </div>
+                                <?php echo e(Form::button('<span>send message</span><span class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', ['type' => 'submit', 'class' => 'contact_button'] )); ?>
+
+                            <?php echo Form::close(); ?>
+
                         </div>
                     </div>
                 </div>

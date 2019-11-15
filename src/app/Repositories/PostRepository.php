@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 
-use App\Post;
+use App\entity\Post;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\Interfaces\IPostRepository;
 

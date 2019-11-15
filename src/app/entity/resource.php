@@ -15,7 +15,7 @@ class resource extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'code', 'is_active'
+        'name', 'description', 'code', 'is_active', 'subject_id', 'pdf_path', 'audio_path', 'video_path'
     ];
 
     /**
@@ -34,13 +34,8 @@ class resource extends Model
     protected $casts = [
     ];
 
-    public function post()
+    public function subject()
     {
-        return $this->hasMany('App\Post');
-    }
-
-    public function cases()
-    {
-        return $this->hasMany('App\Cases');
+        return $this->belongsTo('App\entity\subject');
     }
 }

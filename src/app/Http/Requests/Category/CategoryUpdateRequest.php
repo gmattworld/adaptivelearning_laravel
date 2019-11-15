@@ -4,7 +4,7 @@ namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Repositories\CategoryRepository;
-use App\Category;
+use App\entity\Category;
 
 class CategoryUpdateRequest extends FormRequest
 {
